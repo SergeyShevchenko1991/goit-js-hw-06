@@ -1,18 +1,12 @@
 function countCategory() {
-  const categories = document.querySelector("#categories").children;
-  console.log(`Number of categories ${categories.length}`);
-}
+  const categories = document.querySelectorAll(".item");
 
-function getCategoryInfo() {
-  const categories = [...document.querySelectorAll("#categories .item")];
+  console.log(`Number of categories: ${categories.length}`);
+  console.log(" ");
   for (const category of categories) {
-    const title = category.firstElementChild;
-    const items = category.querySelectorAll("li");
-    console.log("\n");
-    console.log(`Category: ${title.textContent}`);
-    console.log(`Elements: ${items.length}`);
+    console.log(`Category: ${category.firstElementChild.textContent}`);
+    console.log(`Elements: ${category.lastElementChild.children.length}`);
   }
 }
 
 countCategory();
-getCategoryInfo();
