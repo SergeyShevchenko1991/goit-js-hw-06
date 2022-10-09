@@ -6,7 +6,7 @@ function countCategory() {
 function getCategoryInfo() {
   const categories = [...document.querySelectorAll("#categories .item")];
   for (const category of categories) {
-    const title = category.querySelector("h2");
+    const title = category.firstElementChild;
     const items = category.querySelectorAll("li");
     console.log("\n");
     console.log(`Category: ${title.textContent}`);
